@@ -155,6 +155,26 @@ nav a:hover {
 }
 
 
+/*about*/
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin-top: 55px;
+    margin-left: 150px;
+    margin-right: 150px;
+
+}
+.about-img {
+    width: 200px;
+    border-radius: 50%;
+    margin: 0, 50%, 0, 50%;
+}
+
+
+
 /*  meme  */
 .meme-card {
     display: flex;
