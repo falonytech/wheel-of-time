@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Demoted Society</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Demoted Society</h1>
+        <p class="tagline">A personal blog on tech, politics, media, and anything else.</p>
+      </div>
+
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="media.html">Media</a></li>
+          <li><a href="politics.html">Politics</a></li>
+          <li><a href="tech.html">Tech</a></li>
+          <li><a href="about.html">About Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+              
+    <section class="blog_content">
+        <div class="blog_content-article">
+            <h1 class="blog_content-title">Raspberry Pi Server</h1>
+            <h3 class="blog_content-date">November 11, 2025</h3>
+
+                    <p class="blog_content-p">
+                        I have used Linux for a long time, since 2004 or 2005 if I recall. While it has not always been my main operating system, 
+                        I have always come back to it because I always run into a point where I had to reinstall Windows, but did not have a 
+                        paid-for copy when I was younger. And while I have used Linux for such a long time, I never took the time to learn all 
+                        the ins and outs. However, I have been taking courses on it recently and got to a couple of the lessons that I have wanted 
+                        to learn more, SSH and zrchive files.  
+                    </p>
+                    <p class="blog_content-p">
+                        I am completing these courses on a virtual image of Fedora MATE edition on a Windows gaming laptop because that computer has a 
+                        higher core count and is more powerful. But needed a machine to SH into. I was setting up another virtual machine but was 
+                        running into some issues there when I thought to myself, why not use the Raspberry Pi I have sitting around gathering dust. 
+                        Once I got that working, one thing led to another and I was deep into reading guides on how to set up webservers and FTP servers 
+                        on the Pi. I figured, there would be no better practice for what I was learning in the Linux course than practical application by 
+                        transferring my site over to the Raspberry Pi and managing the machine remotely.  
+                    </p>
+                    <p class="blog_content-p">Below are three Youtube videos that I watched from Tony Teaches Tech that helped me get started. </p>
+                   <a href="http://youtube.com/watch?v=63yw7b0NuWc&list=PL_vyuxE-AO-CXEUMjEN8Vzt0_WxrhEbEX">Enable SSH on Raspberry Pi</a>
+                    <br>
+                    <a href="https://www.youtube.com/watch?v=Y1mNeWwj8D0&list=PL_vyuxE-AO-CXEUMjEN8Vzt0_WxrhEbEX&index=1">How to Host a Website on your Raspberry Pi</a>
+                    <br>
+                    <a href="https://www.youtube.com/watch?v=Oy52MqsWQdM&list=PL_vyuxE-AO-CXEUMjEN8Vzt0_WxrhEbEX&index=7">How to Install an Apache Web Server on Raspberry Pi</a>
+                    <br>
+                    <br>
+                    <p class="blog_content-p">To set up an FTP server, I then also used this <a href="https://pimylifeup.com/raspberry-pi-ftp/">Pimylifeup</a> guide.  
+                    </p>
+                    <p class="blog_content-p">I have been able to set up the FTP server and webserver, but I am still working on getting the domain name 
+                        to point to the server. I will update this article when I get that working. </p>
+                    <p class="blog_content-p">The Raspberry Pi I am using is a Raspberry Pi 4 with 4Gb of RAM and a 32Gb SD Card running Raspbian OS. I 
+                        could see myself outgrowing this over the long-term because of storage space limitations; however, for right now I am just using 
+                        this as a learning tool and do not have a reason to spend more money for something that will get very little traffic. </p>
+                    <img src="images/tech/raspberry-pi/raspberry_pi.jpg" alt="raspberry pi" class="blog-scene">
+                    <p class="blog_content-p">Overall, I am really enjoying learning about Linux and setting up the Raspberry Pi as a server. It has been 
+                        a fun project and I am excited to see what else I can do with it. </p>
+                    <p class="blog_content-p">
+                        {Update} So I used the chatbot feature in support for netlify and received the following walkthrough to point the newly purchased domain
+                        name to the Raspberry Pi server. 
+                    </p>
+                    <p class="blog_content-p">
+                      If you purchased your domain through Netlify, it will be automatically configured to use Netlify DNS by default. To point your domain to 
+                      a webserver you are hosting on a Raspberry Pi (i.e., an external server), you need to update the DNS records for your domain in the Netlify 
+                      dashboard.
+                    </p>
+                    <p class="blog_content-p">
+                        Here’s how you can do it:
+                    </p>
+                    <ol class="blog_content-ol">
+                        <li>Go to Domain Management in your Netlify dashboard, navigate to Domain management for your site.</li>
+                        <li>Find Your Domain. Your Netlify-purchased domain should already appear in the list of domains.</li>
+                        <li>Edit DNS Records. 
+                            <ul>
+                                <li>Select your domain and go to the DNS records section. </li>
+                                <li>You will need to create or update an A record to point to the public IP address of your Raspberry Pi webserver.</li>
+                                <li>For example, if your Raspberry Pi’s public IP is 203.0.113.42, set:
+                                    <ul>
+                                        <li>Type: A</li>
+                                        <li>Name: @</li>
+                                        <li>Value: 203.0.113.42</li>
+                                    </ul>
+                                </li>
+                                <li>If you want www.yourdomain.com to also point to your Raspberry Pi, add a CNAME or another A record as needed.</li>
+
+                            </ul>
+                        </li>
+                        <li>Wait for DNS Propagation. DNS changes can take up to 48 hours to propagate globally.</li>
+                    </ol>
+
+                    <p class="blog_content-p">I was easily able to follow these instructions and will report back once I see that it is working properly. If so, then
+                        kudos to the chatbot that they utilize for guidance and this is a lot easier than I thought. And if this works, it is off to the races with managing 
+                        my own site. 
+                    </p>
+
+              <!--
+
+                    <p class="blog_content-p">
+
+                    </p>
+
+
+                    <p class="blog_content-i">
+                        
+                    </p>
+              -->
+            
+        </body>
+    </html>
