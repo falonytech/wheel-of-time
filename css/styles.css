@@ -353,3 +353,57 @@ a:focus, button:focus { outline: 3px solid #ffd966; outline-offset: 2px; }
 
 a { text-decoration: none; color: inherit; }
 a:hover { color: #eb8c20;}
+
+
+/* Small-phone responsiveness tweaks for media/tech/politics pages */
+@media (max-width: 1060px) {
+    /* Make main content areas full width with comfortable padding */
+    .container, .blog_content, .about, .cards, .adventures {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    /* Reduce large vertical paddings for hero/adventure sections */
+    .recent.hero { padding: 3.5rem 0; }
+    .adventures { padding: 3.5rem 0; }
+
+    /* Ensure images scale down and don't overflow */
+    .card img, .blog-content-img, .large-card img, .medium-card img, .about-img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* Stack medium cards vertically on small screens */
+    .medium-card { 
+        flex-direction: column; 
+        width: 100%;
+    }
+
+    /* Episode navigation becomes vertical and full width */
+    .episode-navigation {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+    }
+    .episodelink { width: 90%; margin: 0.5rem 0; }
+
+    /* Slightly reduce header branding size so it fits */
+    .brand h1 { font-size: 1.2rem; }
+    .brand .tagline { font-size: 0.9rem; }
+
+    /* Cards gap and typography adjustments */
+    .cards { gap: 0.75rem; }
+    .card-body { padding: 0.75rem; }
+
+    /* Footers and misc spacing */
+    .site-footer { padding: 1rem 0; }
+
+    /* Make blog content margins/padding friendlier on phones */
+    .blog_content { margin-top: 1rem; padding-bottom: 2rem; }
+}
