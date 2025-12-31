@@ -134,11 +134,19 @@ body { display: flex; flex-direction: column; min-height: 100vh; font-family: sy
     color: var(--white);}
 
 .blog_content {
-    width: 900px;
+    width: 50%;
     margin-left: 25%;
     margin-right: 25%;
     padding-bottom: 50px;
     margin-top: 75px;
+}
+
+@media (max-width: 1000px) {
+    .blog_content {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 }
 
 .blog_content-title {margin-bottom: 5px;}
