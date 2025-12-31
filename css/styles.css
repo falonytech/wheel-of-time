@@ -54,6 +54,49 @@ body { display: flex; flex-direction: column; min-height: 100vh; font-family: sy
   .site-nav { display: block; }
 }
 
+/* Mobile: vertical dropdown panel that covers 90% of viewport (width 90%) */
+@media (max-width: 719px) {
+    .site-nav {
+        position: fixed;
+        top: 64px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        height: 90vh;
+        display: none;
+        background: #ffffff;
+        color: #111;
+        border-radius: 10px;
+        padding: 1rem;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+        z-index: 40;
+        overflow: auto;
+    }
+
+    .site-nav.open { display: block; }
+
+    .site-nav ul { 
+        flex-direction: column; 
+        gap: 1.25rem; 
+        align-items: center; 
+        justify-content: center;
+        height: 100%;
+        padding: 1rem 0;
+    }
+
+    /* Increase mobile nav text by 50%, center it, and add touch-friendly spacing */
+    .site-nav a { 
+        color: #111; 
+        padding: 1rem 1.25rem; 
+        display: block; 
+        border-radius: 8px; 
+        font-size: 1.5em; /* 50% larger than base */
+        text-align: center;
+        min-height: 56px; /* touch target size */
+        line-height: 1.2;
+    }
+}
+
 /* Hero / Recent */
 .recent.hero { 
     background-image: url(images/background-tower-image.png);
