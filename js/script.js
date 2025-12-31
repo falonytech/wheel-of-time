@@ -5,12 +5,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   btn.addEventListener('click', ()=>{
     const isOpen = btn.classList.toggle('open');
     btn.setAttribute('aria-expanded', String(isOpen));
-
-    if(isOpen){
-      nav.style.display = 'block';
-    } else {
-      nav.style.display = '';
-    }
+    nav.classList.toggle('open', isOpen);
   });
 
   // close nav when clicking outside on mobile
@@ -18,7 +13,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     if(!btn.contains(e.target) && !nav.contains(e.target) && btn.classList.contains('open')){
       btn.classList.remove('open');
       btn.setAttribute('aria-expanded','false');
-      nav.style.display = '';
+      nav.classList.remove('open');
     }
   });
 });
