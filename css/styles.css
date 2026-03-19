@@ -106,7 +106,8 @@ body { display: flex; flex-direction: column; min-height: 100vh; font-family: sy
     background-position: center center;
     padding: 8rem 0;
     color: #fff;
-}
+}I recently inherited a collection of vintage Star Wars paperbacks from my father—including the original trilogy novelizations 
+              and Splinter of the Mind’s Eye—and I decided to dive into Brian Daley’s 1979 classic, Han Solo’s Revenge. 
 
 /* About page full-bleed background */
 .about-page {
@@ -135,6 +136,7 @@ body { display: flex; flex-direction: column; min-height: 100vh; font-family: sy
 .medium-card {
   display: flex;
   flex-direction: row;
+  align-items: center;
   width: 1000px;
   background-color: #fff;
   border-radius: 8px;
@@ -146,6 +148,9 @@ body { display: flex; flex-direction: column; min-height: 100vh; font-family: sy
   width: 250px;
   border-radius: 8px;
 }
+
+
+
 
 
 /* Article Pages Content */
@@ -370,6 +375,33 @@ a:hover { color: #eb8c20;}
     .recent.hero { padding: 3.5rem 0; }
     .adventures { padding: 3.5rem 0; }
 
+/* Remove side whitespace for .adventures at <=1060px */
+@media (max-width: 1060px) {
+    .adventures {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Make the container inside .adventures span full width so there is no gutter */
+    .container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+
+/* Make global .container full-width at <=1060px to remove gutters on narrower layouts */
+@media (max-width: 1060px) {
+    .container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
     /* Ensure images scale down and don't overflow */
     .card img, .blog-content-img, .large-card img, .medium-card img, .about-img {
         width: 100%;
