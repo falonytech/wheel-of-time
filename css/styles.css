@@ -102,16 +102,35 @@ body { display: flex; flex-direction: column; min-height: 100vh; font-family: sy
 .card.swap-compare-card {
     overflow: visible;
 }
-.card.swap-compare-card img {
-    display: block;
-    width: auto;
+.swap-compare-img-col {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.swap-compare-img-frame {
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 707 / 626;
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 0.375rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card.swap-compare-card .swap-compare-img-frame img {
+    width: 100%;
+    height: 100%;
     max-width: 100%;
-    height: auto;
-    max-height: min(85vh, 720px);
+    max-height: 100%;
     object-fit: contain;
-    object-position: center top;
-    margin-left: auto;
-    margin-right: auto;
+    object-position: center center;
+    margin: 0;
+    display: block;
+}
+.card.swap-compare-card .row.g-3 {
+    align-items: stretch;
 }
 .card-body { padding: 1rem; }
 .card time { display: block; font-size: 0.85rem; color: #555; margin-bottom: 0.5rem; }
