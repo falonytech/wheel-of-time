@@ -159,6 +159,15 @@ body { display: flex; flex-direction: column; min-height: 100vh; font-family: sy
   width: 250px;
   border-radius: 8px;
 }
+.medium-card img.medium-card-thumb,
+.card img.card-thumb {
+  object-fit: cover;
+  object-position: center top;
+}
+.medium-card img.medium-card-thumb {
+  width: 250px;
+  height: 250px;
+}
 
 
 
